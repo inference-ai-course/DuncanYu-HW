@@ -27,6 +27,9 @@ This repository contains my submissions for the AI/ML course homework assignment
 - [Homework: Hybrid Search](https://github.com/inference-ai-course/DuncanYu-HW/tree/main/Week5/Homework)
 - [Class Work: Model Training Pipeline](https://github.com/inference-ai-course/DuncanYu-HW/tree/main/Week5/README)
 
+### **Week 6: Voice Research Agent v2**
+- [Voice Agent Implementation](https://github.com/inference-ai-course/DuncanYu-HW/tree/main/Week6)
+
 ---
 
 ## 📋 Weekly Overview
@@ -56,6 +59,11 @@ This repository contains my submissions for the AI/ML course homework assignment
 - **Technologies**: FAISS + BM25, SQLite FTS, LoRA fine-tuning
 - **Key Projects**: Hybrid search fusion, automated training pipelines
 
+### **Week 6: Voice Research Agent v2**
+- **Focus**: Enhanced voice interaction system with modular architecture
+- **Technologies**: FastAPI, OpenAI Whisper, Coqui TTS, configurable LLMs
+- **Key Features**: Real-time speech processing, cross-platform compatibility, flexible model backends
+
 ---
 
 ## 🛠️ Technologies Used
@@ -79,6 +87,7 @@ DuncanYu-HW/
 ├── Week3/                 # Voice agent (external repo)
 ├── Week4/                 # Vector search & RAG
 ├── Week5/                 # Hybrid search & model training
+├── Week6/                 # Voice agent v2 implementation
 └── README.md             # This file
 ```
 
