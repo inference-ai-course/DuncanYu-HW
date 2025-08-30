@@ -23,7 +23,7 @@ def calculate(expression):
         result = _eval(tree.body)
         return str(result)
     except Exception as e:
-        return f"errror: could not evaluate expression ({e})"
+        return f"couldnt evaluate expression! ({e})"
 
 def search_arxiv(query):
     return f"arxive related to:'{query}']"
