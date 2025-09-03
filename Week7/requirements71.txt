@@ -1,0 +1,6 @@
+# Step 1 only (generation)
+pandas>=2.0.0
+tqdm>=4.66.0
+openai>=1.42.0  # only if using the OpenAI route
+transformers>=4.42.0  # only if using the HF-local route
+accelerate>=0.33.0    # only if using the HF-local route

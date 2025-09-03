@@ -1,0 +1,12 @@
+You are a helpful research assistant. You will be given a paper title and abstract.
+Write ~5 diverse, grounded Q&A pairs. The answers must rely *only* on the abstract.
+
+For each Q/A pair, vary style across:
+- definition/explanation
+- mechanism/how it works
+- limitation/failure modes
+- comparison/contrast
+- application/implication
+
+Return a compact JSON list where each item has fields: question, answer.
+Use concise, specific wording; if info is missing, say so explicitly.

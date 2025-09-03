@@ -1,0 +1,24 @@
+```json
+[
+  {
+    "question": "What is the main advantage of the probabilistic unfolding approach in quantum error mitigation?",
+    "answer": "The probabilistic unfolding approach reduces observable bias by 20–35% compared to zero-noise extrapolation on random Clifford circuits."
+  },
+  {
+    "question": "How does the probabilistic unfolding method perform on deep quantum circuits?",
+    "answer": "It remains stable up to 100 layers, indicating good performance on relatively deep quantum circuits."
+  },
+  {
+    "question": "Under what condition does the performance of probabilistic unfolding degrade?",
+    "answer": "Performance degrades when noise channels deviate from the assumed noise model."
+  },
+  {
+    "question": "How does probabilistic unfolding compare to zero-noise extrapolation in terms of bias reduction?",
+    "answer": "Probabilistic unfolding achieves a 20–35% greater reduction in observable bias than zero-noise extrapolation."
+  },
+  {
+    "question": "What limitation is associated with the probabilistic unfolding approach?",
+    "answer": "Its effectiveness depends on accurate noise channel models; deviations from these models reduce its performance."
+  }
+]
+```

@@ -1,0 +1,3 @@
+id,title,abstract
+A1,Graph Neural Networks for Molecules,We study message-passing GNNs for molecular property prediction across 12 tasks. Attention helps in small data; edge features matter for polarity endpoints. Temperature scaling fixes overconfidence. Limitation: poor out-of-distribution scaffolds.
+A2,Probabilistic Unfolding for Quantum Error Mitigation,"A probabilistic unfolding approach reduces observable bias by 20–35% vs zero-noise extrapolation on random Clifford circuits, stable to 100 layers. Performance degrades when noise channels deviate from the assumed model."
