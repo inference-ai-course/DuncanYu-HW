@@ -1,0 +1,24 @@
+```json
+[
+  {
+    "question": "What is the main purpose of the probabilistic unfolding approach described in the paper?",
+    "answer": "The probabilistic unfolding approach aims to reduce observable bias in quantum error mitigation."
+  },
+  {
+    "question": "How does the probabilistic unfolding method perform compared to zero-noise extrapolation on random Clifford circuits?",
+    "answer": "It reduces observable bias by 20–35% compared to zero-noise extrapolation on random Clifford circuits."
+  },
+  {
+    "question": "What is a limitation of the probabilistic unfolding approach mentioned in the abstract?",
+    "answer": "Its performance degrades when noise channels deviate from the assumed noise model."
+  },
+  {
+    "question": "How stable is the probabilistic unfolding method when applied to deep quantum circuits?",
+    "answer": "It remains stable up to 100 layers in random Clifford circuits."
+  },
+  {
+    "question": "In what context or application is the probabilistic unfolding approach evaluated?",
+    "answer": "It is evaluated on random Clifford circuits for quantum error mitigation."
+  }
+]
+```

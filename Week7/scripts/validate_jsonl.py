@@ -34,7 +34,7 @@ def main():
         print(f"OK: {n} lines validated.")
         sys.exit(0)
     else:
-        print("FAILED: see messages above.")
+        print("failed!: see messages above.")
         sys.exit(2)
 
 if __name__ == "__main__":
