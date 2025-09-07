@@ -38,14 +38,29 @@ This week focused on building a complete RAG (Retrieval-Augmented Generation) pi
 
 ---
 
-## Data Directory Documentation
+## Homework: Vector Search & RAG Pipeline
 
-### Overview
+### Document Processing Pipeline
+- **Web Scraping**: Automated ArXiv paper collection and metadata extraction
+- **Text Extraction**: Clean text extraction from various document formats
+- **Content Cleaning**: Preprocessing and normalization of extracted text
 
+### Vector Search Implementation
+- **Text Chunking**: Intelligent document segmentation for optimal retrieval
+- **Embedding Generation**: Vector representations using sentence transformers
+- **FAISS Indexing**: High-performance vector similarity search implementation
+
+### Web Interface Development
+- **FastAPI Backend**: RESTful API for search and pipeline management
+- **Search Functionality**: Semantic search with relevance ranking
+- **Pipeline Orchestration**: Automated processing workflow management
+
+### Data Directory Documentation
+
+#### Overview
 The data directory stores various stages of document processing, from raw text extraction to final vector embeddings and search indices.
 
-### File Structure
-
+#### File Structure
 ```
 data/
 ├── texts.jsonl           # Raw extracted text documents
@@ -56,9 +71,9 @@ data/
 └── README.md            # This file
 ```
 
-### File Descriptions
+#### File Descriptions
 
-#### `texts.jsonl`
+**`texts.jsonl`**
 - **Purpose**: Raw text documents extracted from various sources
 - **Format**: JSON Lines format with document metadata
 - **Content**: Original documents before any processing
@@ -69,13 +84,13 @@ data/
   - `source`: Source URL or identifier
   - `metadata`: Additional document information
 
-#### `texts_dedup.jsonl`
+**`texts_dedup.jsonl`**
 - **Purpose**: Deduplicated version of texts.jsonl
 - **Format**: Same as texts.jsonl but with duplicates removed
 - **Processing**: Uses content hashing to identify and remove duplicate documents
 - **Benefits**: Reduces index size and improves search quality
 
-#### `chunks.jsonl`
+**`chunks.jsonl`**
 - **Purpose**: Text chunks optimized for embedding and retrieval
 - **Format**: JSON Lines with chunk-specific metadata
 - **Processing**: Documents split into semantically coherent chunks
@@ -87,20 +102,20 @@ data/
   - `end_pos`: Ending position in original document
   - `embedding`: Vector embedding (if pre-computed)
 
-#### `faiss_index.faiss`
+**`faiss_index.faiss`**
 - **Purpose**: FAISS vector index for fast similarity search
 - **Format**: Binary FAISS index file
 - **Content**: Dense vector embeddings of text chunks
 - **Index Type**: Typically IVF (Inverted File) or HNSW for efficiency
 - **Dimensions**: Usually 384 or 768 depending on embedding model
 
-#### `faiss_metas.pkl`
+**`faiss_metas.pkl`**
 - **Purpose**: Metadata corresponding to FAISS index entries
 - **Format**: Pickle file containing list/dict of metadata
 - **Content**: Maps index positions to chunk metadata
 - **Usage**: Retrieve original text and metadata from search results
 
-### Data Processing Pipeline
+#### Data Processing Pipeline
 
 1. **Text Extraction** → `texts.jsonl`
    - Extract text from PDFs, web pages, documents
@@ -120,62 +135,40 @@ data/
    - Build FAISS index for fast retrieval
    - Store metadata for result mapping
 
-### Data Statistics
+---
 
-Typical dataset characteristics:
-- **Documents**: 1,000-10,000 papers/articles
-- **Chunks**: 10,000-100,000 text segments
-- **Index Size**: 50MB-500MB depending on corpus size
-- **Embedding Model**: sentence-transformers/all-MiniLM-L6-v2 or similar
+## Class Assignment: Document Processing & Vector Search
 
-### Data Usage Examples
+This week focused on implementing core document processing techniques and vector search capabilities using FAISS for semantic retrieval.
 
-#### Loading Data
-```python
-import json
+### Document Processing
+- **Text Chunking**: Implement intelligent document segmentation strategies
+- **Content Preprocessing**: Clean and normalize text for optimal embedding
+- **Metadata Extraction**: Preserve document structure and context information
 
-# Load chunks
-chunks = []
-with open('data/chunks.jsonl', 'r') as f:
-    for line in f:
-        chunks.append(json.loads(line))
+### Vector Search Implementation
+- **Embedding Generation**: Create high-quality vector representations
+- **FAISS Integration**: Build efficient similarity search infrastructure
+- **Index Management**: Optimize storage and retrieval performance
 
-# Load FAISS index
-import faiss
-import pickle
+### Query Processing
+- **Search Interface**: Develop query processing and ranking systems
+- **Retrieval Optimization**: Fine-tune search parameters and algorithms
+- **Result Formatting**: Structure search results with relevance scoring
 
-index = faiss.read_index('data/faiss_index.faiss')
-with open('data/faiss_metas.pkl', 'rb') as f:
-    metadata = pickle.load(f)
-```
+### Implementation Status
 
-#### Searching
-```python
-# Perform similarity search
-query_vector = model.encode(["your query here"])
-scores, indices = index.search(query_vector, k=5)
+#### Document Processing
+- [x] Intelligent text chunking algorithms
+- [x] Content preprocessing and cleaning
+- [x] Metadata preservation and handling
 
-# Retrieve metadata
-results = [metadata[idx] for idx in indices[0]]
-```
+#### Vector Search System
+- [x] FAISS vector index creation and setup
+- [x] Embedding generation pipeline
+- [x] Index optimization and management
 
-### Data Maintenance
-
-#### Updating the Index
-1. Add new documents to `texts.jsonl`
-2. Run deduplication process
-3. Re-chunk documents
-4. Rebuild FAISS index
-5. Update metadata file
-
-#### Index Optimization
-- **Rebalancing**: Periodically rebuild index for optimal performance
-- **Pruning**: Remove outdated or low-quality documents
-- **Compression**: Use quantization for smaller index size
-
-### Performance Considerations
-
-- **Index Type**: Choose appropriate FAISS index based on dataset size
-- **Chunk Size**: Balance between context and granularity (typically 200-500 tokens)
-- **Embedding Model**: Trade-off between quality and speed
-- **Memory Usage**: Monitor RAM usage for large indices
+#### Query Processing
+- [x] Search query processing system
+- [x] Retrieval and ranking functionality
+- [x] Result formatting and scoring
